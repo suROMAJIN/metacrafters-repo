@@ -10,7 +10,7 @@ The purpose of this repository is to document my progress, share my projects, an
 
 Below is a list of projects that I plan to work on. Each project will be updated with details, progress, and outcomes as I complete them.
 
-### JS Proof
+### [JS Proof](./JS-proof)
 1. **Project 1: [Create a NFT Collection]**
    - **Description:** -This project serves as a foundational exercise in creating a simple management system for NFTs using JavaScript. 
     The goal is to implement functions that simulate the minting of NFTs, storing their metadata, listing all created NFTs, and retrieving the total count of NFTs created.
