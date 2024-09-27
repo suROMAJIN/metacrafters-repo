@@ -1,7 +1,6 @@
 # Metacrafters Repository
 
-Welcome to the my Metacrafters repository! This repository is dedicated to showcasing my journey and projects as I explore and develop various skills in the world of technology and crafting. Here, you will find a collection of projects that I will be working on and gradually accomplishing.
-
+Welcome to the my Metacrafters repository! This repository is dedicated to showcasing my journey and projects as I explore and develop various skills in the world of technology and crafting. Here, you will find a collection of projects that I will be working on/
 ## Purpose
 
 The purpose of this repository is to document my progress, share my projects, and contribute to the Metacrafters community. Each project will serve as a learning experience and an opportunity to apply new concepts and techniques.
@@ -19,7 +18,7 @@ Below is a list of projects that I plan to work on. Each project will be updated
 
 ### [ETH Proof](./Eth-proof)
 1. **Project 1: [MyToken]**
-   - **Description:** This project is a simple ERC20 token contract designed for educational purposes. It allows users to mint and burn tokens, demonstrating basic functionalities of a decentralized token on the Ethereum blockchain. 
+   - **Description:** This project is a simple token contract designed for educational purposes. It allows users to mint and burn tokens, demonstrating basic functionalities of a decentralized token on the Ethereum blockchain. 
    The token is named "Decentralized Accreditation in Monetary Notes" with the symbol "DAMN."
    - **Status:** Completed 
    - **Technologies Used:** Solidity, Remix IDE
