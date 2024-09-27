@@ -17,11 +17,12 @@ Below is a list of projects that I plan to work on. Each project will be updated
    - **Status:** Done
    - **Technologies Used:** Javascript, gitpod workspace 
 
-### ETH Proof
-1. **Project 1: [Project Name]**
-   - **Description:** A brief description of what this project is about.
-   - **Status:** In progress / Completed / Planned
-   - **Technologies Used:** List of technologies or tools used.
+### [ETH Proof](./Eth-proof)
+1. **Project 1: [MyToken]**
+   - **Description:** This project is a simple ERC20 token contract designed for educational purposes. It allows users to mint and burn tokens, demonstrating basic functionalities of a decentralized token on the Ethereum blockchain. 
+   The token is named "Decentralized Accreditation in Monetary Notes" with the symbol "DAMN."
+   - **Status:** Completed 
+   - **Technologies Used:** Solidity, Remix IDE
 
 ### ETH + AVAX Proof 
 1. **Project 1: [Project Name]**
