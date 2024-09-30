@@ -7,8 +7,8 @@ The token is named "Decentralized Accreditation in Monetary Notes" and has the s
 
 ## Features
 Minting: Users can create new tokens and add them to their balance.
+
 Burning: Users can destroy tokens from their balance, reducing the overall supply.
-Balance Tracking: Each user's token balance is tracked using a mapping.
 
 ## Functions
 mint(address sender, uint256 amount)
