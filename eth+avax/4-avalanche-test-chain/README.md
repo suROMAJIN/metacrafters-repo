@@ -93,43 +93,22 @@ constructor() ERC20("Degen", "DGN")
 
 ## Instructions on Running the Contract Locally
 
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd <repository-folder>
-```
+### 1. Copy Code on Remix IDE 
+-  Make sure that it is being compiled correctly. You may need to create a new workspace so that the OpenZeppelin packages are correctly used
 
-### 2. Install Dependencies
-```bash
-npm install
-```
+### 2. Create Two metawallet accounts
 
-### 3. Deploy the Contract
-- Open a terminal and start a local Ethereum node:
-```bash
-npx hardhat node
-```
-- Open a new terminal and deploy the contract:
-```bash
-npx hardhat run --network localhost scripts/deploy.js
-```
+### 3. Connect those two accounts [here](https://core.app/tools/testnet-faucet/?subnet=c&token=c). Basically connect them to the fuji test network.
 
-### 4. Interact with the Contract
-- Once deployed, you can interact with the contract using a front-end interface or through a tool like Hardhat or Remix IDE.
+### 4. Then fill up at least one account with test avax. You might need a promo code depending on availability.
 
-### 5. Running the Front-End (Optional)
-If you have a React front-end:
-```bash
-npm run dev
-```
+### 5. Go back to remix IDE, change environment to `injector provider - metamask`. It should detect your metamask and know that there are only 2 wallets in the network they are connected to (the fuji test chain)
 
-## Troubleshooting Errors
+### 6. Send a small amount of test avax to the second accound so that it can also be used for the operations.
 
-If you encounter errors like `Nonce too high`, `Transaction fallback`, or `ethBlockNumber too high`, try the following:
+### 6. You can now deploy the contract. In the deployed contracts, copy the address of the contract and find it in [here](https://testnet.snowtrace.io/)
 
-1. **Restart Hardhat Node**: Stop the Hardhat node and restart it. Run the deployment again.
-2. **MetaMask Issues**: If MetaMask has issues, try clearing the cache or deleting and re-adding the localhost network.
-3. **Clear Hardhat Cache**: If Hardhat has stale cache data, run `npx hardhat clean` and restart the app.
+### 7. Since you have now deployed the contract, you can now interact with the contract thru REMIX IDE.
 
 ## License
 
