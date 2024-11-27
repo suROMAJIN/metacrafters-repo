@@ -5,7 +5,7 @@
 `AnToken` is a smart contract built on the Ethereum blockchain, designed to create and manage an ERC20 token called **AnToken (ANTK)**. This contract allows the designated owner to mint tokens to specific addresses, while enabling users to transfer and burn tokens. It serves as an educational example of basic token functionalities like minting, transferring, and burning, as well as ownership management in Solidity programming.
 
 ## Features
-- **Minting**: The contract owner can mint new tokens to any address.
+- **Minting**: Only the contract owner can mint new tokens to any address.
 - **Transferring**: Users can transfer tokens to other users, with checks for sufficient balance.
 - **Burning**: Any user can burn their own tokens, reducing the total supply.
 - **Ownership Management**: The owner can transfer ownership of the contract to another address.
