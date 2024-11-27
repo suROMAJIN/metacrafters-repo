@@ -15,7 +15,7 @@ Below is a list of projects that I plan to work on. Each project will be updated
 ### [ETH Proof](./Eth-proof)
 
 
-### [ETH+AVAX Proof](./eth-avax) 
+### [ETH+AVAX Proof](./eth+avax) 
 
   
 
