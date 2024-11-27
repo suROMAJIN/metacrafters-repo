@@ -65,8 +65,8 @@ constructor(uint initBalance, uint initBurgerCount) payable
 ## Instructions on how to run in local environment
 - Clone into your own machine
 - Change active directory to root folder
-- Run the command "npm i". This will install all necessary packages needed.
-- Open a new terminal, and then run `npx hardhat node`
+- Run the command "npm i" in the terminal. This will install all necessary packages needed.
+- Run `npx hardhat node` on the same terminal if the process of installing the react boilerplate + hardhat + other neeeded libraries is successful.
 - Open another new terminal, and in there run `npx hardhat run --network localhost scripts/deploy.js`
 - Open A third terminal, and in this terminal you can now start the front end by running `npm run dev`
 
@@ -90,4 +90,4 @@ This project is licensed under the MIT License. See the [LICENSE](../../LICENSE)
 ## Acknowledgments
 
 Inspired by basic principles of token standards on Ethereum based on lessons from Metacrafters. 
-Developed using Solidity and Remix IDE.
+Developed using Solidity, hardhat, and the ethers library.
