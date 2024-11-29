@@ -42,19 +42,6 @@ function burnTokens(uint256 amount) external
   - `amount`: The number of tokens to burn.
 - **Returns**: None
 
-### `transferOwnershipTo(address newOwner)`
-```solidity
-function transferOwnershipTo(address newOwner) external
-```
-- **Description**: Allows the contract owner to transfer ownership to a new address (`newOwner`).
-- **Parameters**: 
-  - `newOwner`: The address of the new owner.
-- **Returns**: None
-
-## Events
-- **Mint**: Emitted when new tokens are minted to a specified address.
-- **Burn**: Emitted when tokens are burned (destroyed) by a user.
-
 ## Constructor
 ```solidity
 constructor() ERC20("AnToken", "ANTK")
