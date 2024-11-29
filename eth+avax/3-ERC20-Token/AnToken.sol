@@ -7,10 +7,6 @@ contract AnToken is ERC20 {
 
     address public owner;  // Public variable to store the owner's address
 
-    // Events for minting and burning tokens
-    event Mint(address indexed to, uint256 amount);
-    event Burn(address indexed from, uint256 amount);
-
     // Constructor initializes the token with name and symbol, and sets the owner to the contract deployer's address
     constructor() ERC20("AnToken", "ANTK") {
         owner = msg.sender;  // Set the owner to the address that deploys the contract
@@ -21,7 +17,6 @@ contract AnToken is ERC20 {
         require(owner == msg.sender, "Only owner can mint ANTK");  // Ensure only the owner can mint tokens
         require(amount > 0, "Mint amount must be greater than 0 ANTK");
         _mint(to, amount);
-        emit Mint(to, amount);  // Emit mint event for transparency
     }
 
     // Transfer function - Users can transfer tokens to other users, with checks for valid amount
@@ -36,7 +31,6 @@ contract AnToken is ERC20 {
     function burnTokens(uint256 amount) external {
         require(amount > 0, "Burn amount must be greater than 0 ANTK");
         _burn(msg.sender, amount);
-        emit Burn(msg.sender, amount);  // Emit burn event for transparency
     }
 
     // Admin function - Allows the owner to transfer ownership to another address
