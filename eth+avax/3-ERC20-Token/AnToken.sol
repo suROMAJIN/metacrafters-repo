@@ -7,6 +7,7 @@ contract AnToken is ERC20 {
 
     address public owner;  // Public variable to store the owner's address
 
+
     // Constructor initializes the token with name and symbol, and sets the owner to the contract deployer's address
     constructor() ERC20("AnToken", "ANTK") {
         owner = msg.sender;  // Set the owner to the address that deploys the contract
@@ -33,9 +34,6 @@ contract AnToken is ERC20 {
         _burn(msg.sender, amount);
     }
 
-    // Admin function - Allows the owner to transfer ownership to another address
-    function transferOwnershipTo(address newOwner) external {
-        require(owner == msg.sender, "Only the owner can transfer ownership");
-        owner = newOwner;  // Transfer ownership to the new address
-    }
 }
+
+//By Jasper
