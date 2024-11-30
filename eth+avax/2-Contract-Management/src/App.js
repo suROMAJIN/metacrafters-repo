@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import animeContractABI from './AnimeContract.json'; // Import ABI from the file
 
 const ethers = require("ethers")
-const CONTRACT_ADDRESS = "0xCf8e4dA48EAd550f246D662f73a88C01a8767872"; // Replace with your contract address
+const CONTRACT_ADDRESS = "YOUR ADDRESS HERE"; // Replace with your contract address
 
 
 function App() {
