@@ -1,0 +1,53 @@
+.App {
+  font-family: Arial, sans-serif; /* Set a clean font */
+  min-height: 100vh; /* Ensure the container takes the full height of the screen */
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  flex-direction: column; /* Stack elements vertically */
+  background-color: #f8f9fa; /* Optional: change the background color */
+  padding: 20px;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 800px; /* Optional: limit the width */
+  width: 100%; /* Ensures container is responsive */
+}
+
+h1, h2, h3 {
+  margin: 20px 0;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%; /* Makes inputs responsive */
+  max-width: 400px; /* Optional: max width for inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
