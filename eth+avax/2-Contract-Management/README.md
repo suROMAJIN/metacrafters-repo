@@ -29,15 +29,7 @@ function getDetails(uint256 tokenId) public view returns (string memory, address
 - **Parameters**: 
   - `tokenId`: The unique ID of the anime NFT.
 - **Returns**: `string` - Name of the anime, `address` - Owner of the NFT
-
-### `nextTokenId()`
-```solidity
-function nextTokenId() public view returns (uint256)
-```
-- **Description**: Returns the next available token ID for minting a new NFT.
-- **Parameters**: None
-- **Returns**: `uint256` - The next available token ID.
-
+- 
 ---
 
 ## Front-End (React) Features
