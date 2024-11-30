@@ -1,93 +1,119 @@
-# A Simple DAPP: Implementing Burger Management with Smart Contracts
+# A Simple DApp: Implementing Anime NFT Minting
+
 ## Overview
 
-`BurgerContracts` is a smart contract built on the Ethereum blockchain, designed for managing burger sales and inventory. This contract allows the designated owner to sell and buy burgers while maintaining a balance of ETH and burger count. It serves as an educational example of ownership management and error handling in Solidity programming.
+This project is a decentralized application (DApp) for minting and managing Anime NFTs, built using Ethereum smart contracts. It allows users to mint anime-related NFTs, retrieve details of minted NFTs by their `tokenId`, and view details about the specific anime. The DApp interacts with a smart contract deployed on a local Ganache test network, with the front-end built in React.
 
 ## Features
-- **Ownership Management**: Ensures that only the contract owner can execute functions related to selling and buying burgers.
-- **Error Handling**: Demonstrates various methods of error handling in Solidity, including `require()`, `revert()`, and `assert()`.
-- **Event Emission**: Emits events for significant actions like selling and buying burgers, providing transparency and traceability.
+- **Mint Anime NFT**: Allows users to mint NFTs with a name and store them on the blockchain.
+- **Token Details**: Fetches the details of a specific NFT using its `tokenId`.
+- **Random Anime Fetch**: After minting, a random anime is fetched and displayed.
+- **Error Handling**: Displays appropriate messages for failed transactions or missing data.
 
-## Functions
+## Smart Contract Functions
 
-### `getBalance()`
+### `mintAnime(string memory _name)`
 ```solidity
-function getBalance() public view returns(uint256)
+function mintAnime(string memory _name) public
 ```
-- **Description**: Returns the current balance of the contract in ETH.
-- **Parameters**: None
-- **Returns**: `uint256` - The current balance of the contract.
-
-### `getBurgerCount()`
-```solidity
-function getBurgerCount() public view returns(uint256)
-```
-- **Description**: Returns the current count of burgers available in the contract.
-- **Parameters**: None
-- **Returns**: `uint256` - The current burger count.
-
-### `sellBurger(uint256 _amount)`
-```solidity
-function sellBurger(uint256 _amount) public payable
-```
-- **Description**: Allows the owner to sell burgers, increasing the contract's balance and decreasing the burger count. The function checks that the caller is the owner and that there are enough burgers available.
+- **Description**: Mints a new anime NFT with the provided name. Only the caller can mint the NFT.
 - **Parameters**: 
-  - `_amount`: The number of burgers to sell.
+  - `_name`: The name of the anime.
 - **Returns**: None
 
-### `buyBurger(uint256 _withdrawAmount)`
+### `getDetails(uint256 tokenId)`
 ```solidity
-function buyBurger(uint256 _withdrawAmount) public payable
+function getDetails(uint256 tokenId) public view returns (string memory, address)
 ```
-- **Description**: Allows the owner to buy burgers, decreasing the contract's balance and increasing the burger count. The function checks that the caller is the owner and that there is sufficient balance to complete the transaction.
+- **Description**: Retrieves the name and owner address of the anime NFT associated with a given `tokenId`.
 - **Parameters**: 
-  - `_withdrawAmount`: The amount of ETH to withdraw for buying burgers.
-- **Returns**: None
+  - `tokenId`: The unique ID of the anime NFT.
+- **Returns**: `string` - Name of the anime, `address` - Owner of the NFT
 
-## Events
-- **SellBurger**: Emitted when the owner sells burgers.
-- **DecreaseBurgerCount**: Emitted when the burger count is decreased.
-- **BuyBurger**: Emitted when the owner buys burgers.
-- **IncreaseBurgerCount**: Emitted when the burger count is increased.
-
-## Custom Errors
-- **InsufficientBalance**: A custom error that is thrown when there is not enough balance to complete a buy transaction.
-
-## Constructor
+### `nextTokenId()`
 ```solidity
-constructor(uint initBalance, uint initBurgerCount) payable
+function nextTokenId() public view returns (uint256)
 ```
-- **Description**: Initializes the contract with an initial balance and burger count. The contract owner is set to the address that deploys the contract.
-- **Parameters**: 
-  - `initBalance`: The initial balance of the contract.
-  - `initBurgerCount`: The initial count of burgers available.
+- **Description**: Returns the next available token ID for minting a new NFT.
+- **Parameters**: None
+- **Returns**: `uint256` - The next available token ID.
+
+---
+
+## Front-End (React) Features
+
+1. **Mint Anime NFT**:
+   - The user enters an anime name, clicks the "Mint Anime" button, and a new NFT is minted.
+   - Displays a random anime after minting as a placeholder or inspiration for the minted NFT.
+
+2. **Fetch Token Details**:
+   - The user can enter a `tokenId` and click the "Get Details" button to fetch details of a specific NFT.
+   - Displays the anime name and owner address.
+
+3. **State Management**:
+   - Uses React hooks (`useState`) to manage the state of `animeName`, `tokenId`, `animeDetails`, and `tokenDetails`.
+
+4. **Error Handling**:
+   - Alerts users if there are issues with minting, fetching details, or if no data is available.
+
+---
 
 ## Instructions on how to run in local environment
-- Clone into your own machine
-- Change active directory to root folder
-- Run the command "npm i" in the terminal. This will install all necessary packages needed.
-- Run `npx hardhat node` on the same terminal if the process of installing the react boilerplate + hardhat + other neeeded libraries is successful.
-- Open another new terminal, and in there run `npx hardhat run --network localhost scripts/deploy.js`
-- Open A third terminal, and in this terminal you can now start the front end by running `npm run dev`
 
-- So to summarize, first terminal is for creating test network, second terminal is for compiling and deploying to network, and then third is for runing the react app.
+1. **Set Up Ganache and Metamask:**
+   - Initialize a local Ganache test network.
+   - Connect Ganache with Remix IDE and deploy the contract.
 
+2. **Set Up the React Front-End:**
+   - Clone the repository to your local machine.
+   - Navigate to the project root folder and install the necessary packages:
+     ```bash
+     npm install
+     ```
+
+3. **Deploy the Contract:**
+   - Open Remix IDE, connect to your Ganache instance, and deploy the smart contract using the Remix deployment tools.
+
+4. **Set Up Metamask:**
+   - Add the Ganache network to Metamask.
+   - Connect to the Ganache network in Metamask and ensure it's the same network that Remix is using.
+
+5. **Start the React App:**
+   - In the project directory, run:
+     ```bash
+     npm run dev
+     ```
+   - This will start the React front-end, which interacts with the deployed contract on Ganache.
+
+### To summarize:
+- **Step 1**: Run Ganache and connect it with Remix IDE.
+- **Step 2**: Deploy the contract using Remix.
+- **Step 3**: Set up Metamask and connect it to Ganache.
+- **Step 4**: Start the React app using `npm run dev`.
+
+---
 
 ## Troubleshooting errors
-- If you encounter errors like `Nonce too high, Transaction fallback, or ethBlockNumber too high etc.`
-    This is probably due to metamask and/or the hardhat node.
-1. Try stopping the hardhat node and then the react app first. And then starting them again by proceeding with 
-the instructions like above.
-2. Try removing localhost network from metamask. Pick another network first, delete localhost, and then re-enter details again.
-3. Try deleting cached data. For metamask, go to settings-advanced-clea tab activity data.
-And then for hardhat, stop the current node and then run `npx hardhat clean`. Restart the app.
-* Sometimes you might want to try to deploy the contract again while the app is running (?)
+
+- **If you encounter errors like "Nonce too high", "Transaction fallback", or "ethBlockNumber too high"**:
+  1. Try stopping both the hardhat node and the React app. Restart them sequentially. (if using hardhat)
+  2. In Metamask, remove the Ganache localhost network, switch to a different network, and then re-enter the Ganache network details.
+  3. Clear cached data in Metamask (`Settings > Advanced > Clear Activity Data`).
+  4. Run `npx hardhat clean` in your project and restart the node. (if using hardhat)
+  5. If needed, redeploy the contract while the app is running. 
+  6. Check the environment you are running with the remix ide.
+
+- **Issues with Smart Contract Deployment**:
+  - Ensure that the contract is deployed to the correct network and that your Metamask is connected to the same network.
+  
+---
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for more information.
 
+---
+
 ## Acknowledgments
 
-Inspired by basic principles of token standards on Ethereum based on lessons from Metacrafters. 
-Developed using Solidity, hardhat, and the ethers library.
+This DApp is inspired by basic principles of Ethereum token standards and minting processes. Developed using Solidity for the smart contract and React for the front-end. Utilized ganache to setup test deployment. Powered by the Jikan API for the anime information.
